@@ -16,5 +16,5 @@ export default function Survey() {
           <Link to={`/survey/${nextQuestionNumber}`}>Suivant</Link>
         )}
       </div>
-  )
+  ) 
 } 
