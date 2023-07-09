@@ -1,20 +1,18 @@
-import React from "react";
-import * as ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import styled from "styled-components";
-import { ThemeProvider } from "./utils/style/Context";
-import { SurveyProvider } from "./utils/style/Context";
-import Home from "./pages/Home";
-import Survey from "./pages/Survey";
-import Header from "./pages/Header";
-import Results from "./pages/Results";
-import Freelances from "./pages/Freelances";
-import Error from "./components/Error";
-import Footer from "./components/Footer";
-import { createGlobalStyle } from "styled-components";
-import GlobalStyle from "./utils/style/GlobalStyle";
+import React from 'react';
+import * as ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './utils/context/Context';
+import { SurveyProvider } from './utils/context/Context';
+import Home from './pages/Home/Home';
+import Survey from './pages/Survey/Survey';
+import Header from './components/Header/Header';
+import Results from './pages/Results/Results';
+import Freelances from './pages/Freelances/Freelances';
+import Error from './components/Error/Error';
+import Footer from './components/Footer/Footer';
+import GlobalStyle from './utils/style/GlobalStyle';
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
@@ -30,7 +28,7 @@ ReactDOM.createRoot(rootElement).render(
             <Route path="/survey/:questionNumber" element={<Survey />} />
             <Route path="*" element={<Error />} />
           </Routes>
-          <Footer/>
+          <Footer />
         </SurveyProvider>
       </ThemeProvider>
     </Router>

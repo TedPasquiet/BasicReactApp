@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import colors from '../utils/style/Color'
-import { StyledLink } from '../utils/style/Atoms'
-// import { useTheme } from '../utils/style/Hooks'
-import HomeIllustration from '../assets/home-illustration.svg'
+import colors from '../../utils/style/Color'
+import { StyledLink } from '../../utils/style/Atoms'
+import { useTheme } from '../../utils/context/Hooks'
+import HomeIllustration from '../../assets/home-illustration.svg'
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -40,13 +40,14 @@ const Illustration = styled.img`
   flex: 1;
 `
 
+function Home() {
+  const { theme } = useTheme()
 
-export default function Home() {
   return (
-<HomeWrapper>
-      <HomerContainer >
+    <HomeWrapper>
+      <HomerContainer theme={theme}>
         <LeftCol>
-          <StyledTitle >
+          <StyledTitle theme={theme}>
             Repérez vos besoins, on s’occupe du reste, avec les meilleurs
             talents
           </StyledTitle>
@@ -59,3 +60,5 @@ export default function Home() {
     </HomeWrapper>
   )
 }
+
+export default Home
